@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  sarva-node:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    environment:
+      - SARVA_API=https://e65440d9-cfb0-47fa-b11a-d2070bf13013.up.railway.app
+      - NODE_NAME=local-docker-node
+      - GPU_TIER=rtx-3060
+      - OWNER_ID=local-user

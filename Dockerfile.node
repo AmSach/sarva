@@ -1,0 +1,10 @@
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY agent.py .
+ENV SARVA_API=https://e65440d9-cfb0-47fa-b11a-d2070bf13013.up.railway.app
+ENV NODE_NAME=docker-node
+ENV GPU_TIER=cpu
+ENV OWNER_ID=docker-user
+CMD ["python3", "agent.py"]
